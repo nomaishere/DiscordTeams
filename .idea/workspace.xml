@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a8cbb20-a571-4888-9805-668efe189826" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/token.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/discordteams/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/Bot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,18 +104,41 @@
       <option name="presentableId" value="Default" />
       <updated>1588241209859</updated>
       <workItem from="1588241211829" duration="5767000" />
-      <workItem from="1588250108320" duration="377000" />
+      <workItem from="1588250108320" duration="677000" />
     </task>
+    <task id="LOCAL-00001" summary="add: token reader">
+      <created>1588250715580</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588250715580</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add: token reader" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: token reader" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="166" y="115" width="968" height="669" key="#Project_Structure" timestamp="1588248713825">
+    <state x="166" y="115" width="968" height="669" key="#Project_Structure" timestamp="1588250817355">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="166" y="115" width="968" height="669" key="#Project_Structure/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588248713825" />
+    <state x="166" y="115" width="968" height="669" key="#Project_Structure/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588250817355" />
     <state x="533" y="160" key="#com.intellij.ide.util.MemberChooser" timestamp="1588248246259">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -126,6 +147,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="473" y="289" width="494" height="327" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588242250924" />
+    <state x="0" y="0" width="838" height="900" key="CommitChangelistDialog2" timestamp="1588250831443">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="0" width="838" height="900" key="CommitChangelistDialog2/0.0.1440.900/-265.-1057.1920.1057@0.0.1440.900" timestamp="1588250715369" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588250831443" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1588248812869">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -150,6 +176,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588241237304" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1588250761773">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900/-265.-1057.1920.1057@0.0.1440.900" timestamp="1588250761773" />
     <state x="380" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1588250109957">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
