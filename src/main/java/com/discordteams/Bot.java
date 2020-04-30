@@ -26,6 +26,7 @@ public class Bot {
         jb.setAutoReconnect(true);
         jb.setStatus(OnlineStatus.DO_NOT_DISTURB);
         jb.setToken(bufReader.readLine());
+        jb.addEventListeners(new Listener());
 
         try {
             jda = jb.build();
