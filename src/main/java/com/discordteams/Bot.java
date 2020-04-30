@@ -18,7 +18,7 @@ public class Bot {
         JDABuilder jb = new JDABuilder(AccountType.BOT);
         jb.setAutoReconnect(true);
         jb.setStatus(OnlineStatus.DO_NOT_DISTURB);
-        jb.setToken("NzA1MzQ1NzUxOTI4MDEyODI5.XqqW9g.2MCXCgCIwivQabj5k9CAX1WgrcE");
+        jb.setToken("NzA1MzQ1NzUxOTI4MDEyODI5.XqrAMg.HdRzlD5NGYuslFdVDgXpNeX3iug");
 
         try {
             jda = jb.build();
