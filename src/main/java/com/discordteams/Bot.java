@@ -1,11 +1,30 @@
 package com.discordteams;
 
+import com.mongodb.client.*;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.JDA;
+
+import com.mongodb.client.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.ServerAddress;
+
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
+
+import org.bson.Document;
+import java.util.Arrays;
+import com.mongodb.Block;
+
+import static com.mongodb.client.model.Filters.*;
+import com.mongodb.client.result.DeleteResult;
+import static com.mongodb.client.model.Updates.*;
+import com.mongodb.client.result.UpdateResult;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Nonnull;
 import javax.security.auth.login.LoginException;
@@ -29,6 +48,11 @@ public class Bot {
         jb.addEventListeners(new Listener());
 
         try {
+            MongoClient mongoClient = MongoClients.create(
+                    "mongodb+srv://plantstoen:sangmin0917@discordteamscluster-046lc.gcp.mongodb.net/test?retryWrites=true&w=majority");
+            MongoDatabase database = mongoClient.getDatabase("test");
+            System.out.println(database.listCollections().toString());
+            System.out.println("-----");
             jda = jb.build();
         } catch (LoginException e) {
             e.printStackTrace();
