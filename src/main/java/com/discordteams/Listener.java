@@ -1,5 +1,7 @@
 package com.discordteams;
 
+import com.discordteams.command.Team;
+import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.api.events.guild.GuildLeaveEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -13,8 +15,13 @@ import javax.annotation.Nonnull;
 
 
 public class Listener extends ListenerAdapter {
+    JDA jda;
 
-    @Override // Main MessageEventListenerd
+    public void addJDAObject(JDA jda) {
+        this.jda = jda;
+    }
+
+    @Override // Main MessageEventListener
     public void onMessageReceived(MessageReceivedEvent event) {
         User user = event.getAuthor();
         TextChannel tc = event.getTextChannel();
@@ -28,6 +35,7 @@ public class Listener extends ListenerAdapter {
                     break;
                 case "team":
                     System.out.println("team 입력");
+                    Team team = new Team(jda, user, tc, msg);
                     break;
                 case "":
                     break;

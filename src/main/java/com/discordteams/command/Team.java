@@ -1,29 +1,20 @@
 package com.discordteams.command;
 import com.discordteams.Listener;
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.Role;
+import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.guild.GenericGuildEvent;
 import net.dv8tion.jda.api.utils.cache.SnowflakeCacheView;
 
 import net.dv8tion.jda.internal.utils.Checks;
-import net.dv8tion.jda.api.entities.User;
 import sun.security.krb5.Config;
 
 import java.util.List;
 
 
-public class Team {
+public class Team extends BasicFeature {
 
-    private JDA jda;
-    private Listener listener;
-
-
-    public Team(JDA jda, Listener listener) {
-        this.jda = jda;
-        this.listener = listener;
+    public Team(JDA jda, User user, TextChannel textChannel, Message message) {
+        super(jda, user, textChannel, message);
     }
 
     public Role updateRole(Member member) {
@@ -48,11 +39,26 @@ public class Team {
         SnowflakeCacheView<Guild> guildIds = jda.getGuildCache();
         Guild guild = event.getGuild();
 
-        for(User user: users) {
+        for (User user : users) {
             System.out.println(users.size());
             System.out.println(user.isBot());
         }
 
         System.out.println(guild);
+    }
+
+    @Override
+    public void commandSelector(String commandType) {
+
+    }
+
+    @Override
+    public void commandSelector(String commandType, String data1) {
+
+    }
+
+    @Override
+    public void commandSelector(String commandType, String data1, String data2) {
+
     }
 }

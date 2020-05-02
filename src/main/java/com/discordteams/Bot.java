@@ -59,6 +59,7 @@ public class Bot {
 
             System.out.println("---Start JDA Object Build---");
             jda = jb.build();
+            listener.addJDAObject(jda);
             System.out.println("---End JDA Object Build---");
 
 
