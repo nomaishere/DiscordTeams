@@ -45,20 +45,22 @@ public class Bot {
 
         JDABuilder jb = new JDABuilder(AccountType.BOT);
         jb.setAutoReconnect(true);
-        jb.setStatus(OnlineStatus.DO_NOT_DISTURB);
+        jb.setStatus(OnlineStatus.ONLINE);
         jb.setToken(bufReader.readLine());
-        jb.addEventListeners(new Listener());
+        Listener listener = new Listener();
+        jb.addEventListeners(listener);
 
         try {
             MongoClient mongoClient = MongoClients.create(
                     "mongodb+srv://plantstoen:sangmin0917@discordteamscluster-046lc.gcp.mongodb.net/test?retryWrites=true&w=majority");
             MongoDatabase database = mongoClient.getDatabase("test");
             System.out.println(database.listCollections().toString());
-            System.out.println("-----");
-            jda = jb.build();
+            System.out.println("---End Database Setup---");
 
-            Team testTeam = new Team(jda);
-            testTeam.getMember();
+            System.out.println("---Start JDA Object Build---");
+            jda = jb.build();
+            System.out.println("---End JDA Object Build---");
+
 
         } catch (LoginException e) {
             e.printStackTrace();
