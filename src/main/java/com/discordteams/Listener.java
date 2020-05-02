@@ -18,7 +18,8 @@ public class Listener extends ListenerAdapter {
         TextChannel tc = event.getTextChannel();
         Message msg = event.getMessage();
         if(user.isBot()) return;
-        if(msg.getContentRaw().equalsIgnoreCase("hello")) {
+        if(msg.getContentRaw().charAt(0) == '!') {
+            String[] args = msg.getContentRaw().substring(1).split(" ");
             tc.sendMessage("Hello," + user.getAsMention()).queue();
         }
     }

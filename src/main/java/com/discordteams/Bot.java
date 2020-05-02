@@ -1,9 +1,11 @@
 package com.discordteams;
 
+import com.discordteams.command.Team;
 import com.mongodb.client.*;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.JDA;
@@ -54,6 +56,10 @@ public class Bot {
             System.out.println(database.listCollections().toString());
             System.out.println("-----");
             jda = jb.build();
+
+            Team testTeam = new Team(jda);
+            testTeam.getMember();
+
         } catch (LoginException e) {
             e.printStackTrace();
         }
