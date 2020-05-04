@@ -1,20 +1,21 @@
-package com.discordteams.command;
-import com.discordteams.Listener;
+package com.discordteams.feature;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoDatabase;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.guild.GenericGuildEvent;
 import net.dv8tion.jda.api.utils.cache.SnowflakeCacheView;
 
 import net.dv8tion.jda.internal.utils.Checks;
-import sun.security.krb5.Config;
 
 import java.util.List;
 
 
 public class Team extends BasicFeature {
 
-    public Team(JDA jda, User user, TextChannel textChannel, Message message) {
-        super(jda, user, textChannel, message);
+    public Team(JDA jda, Guild guild, User user, TextChannel textChannel, Message message, MongoClient mongoClient, MongoDatabase mongoDatabase) {
+        super(jda, guild, user, textChannel, message, mongoClient, mongoDatabase);
+        this.commandSelector();
     }
 
     public Role updateRole(Member member) {
@@ -48,17 +49,21 @@ public class Team extends BasicFeature {
     }
 
     @Override
-    public void commandSelector(String commandType) {
-
-    }
-
-    @Override
-    public void commandSelector(String commandType, String data1) {
-
-    }
-
-    @Override
-    public void commandSelector(String commandType, String data1, String data2) {
+    public void commandSelector() {
+        String[] args = message.getContentRaw().substring(1).split(" ");
+        switch (args[1]) {
+            case "update":
+                break;
+            case "member":
+                textChannel.sendMessage("member").queue();
+                break;
+            case "":
+                textChannel.sendMessage("error").queue();
+                break;
+            default:
+                textChannel.sendMessage("There are no command. Text !help to get a usable command :) ").queue();
+                break;
+        }
 
     }
 }

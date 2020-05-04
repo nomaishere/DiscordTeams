@@ -1,38 +1,21 @@
 package com.discordteams;
 
-import com.discordteams.command.Team;
 import com.mongodb.client.*;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.entities.Role;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.JDA;
 
 import com.mongodb.client.MongoClient;
-import com.mongodb.MongoClientURI;
-import com.mongodb.ServerAddress;
 
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoCollection;
 
-import org.bson.Document;
-import java.util.Arrays;
-import com.mongodb.Block;
-
-import static com.mongodb.client.model.Filters.*;
-import com.mongodb.client.result.DeleteResult;
-import static com.mongodb.client.model.Updates.*;
-import com.mongodb.client.result.UpdateResult;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Nonnull;
 import javax.security.auth.login.LoginException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Bot {
 
@@ -53,14 +36,21 @@ public class Bot {
         try {
             MongoClient mongoClient = MongoClients.create(
                     "mongodb+srv://plantstoen:sangmin0917@discordteamscluster-046lc.gcp.mongodb.net/test?retryWrites=true&w=majority");
-            MongoDatabase database = mongoClient.getDatabase("test");
-            System.out.println(database.listCollections().toString());
-            System.out.println("---End Database Setup---");
+            MongoDatabase database = mongoClient.getDatabase("discordteams_data");
 
-            System.out.println("---Start JDA Object Build---");
+            /*
+            MongoIterable<String> collection = database.listCollectionNames();
+            List<String> tables = new ArrayList<String>();
+            MongoCursor<String> cursor = collection.iterator();
+            while(cursor.hasNext()) {
+                String table = cursor.next();
+                System.out.println(table);
+            }
+           */
+
             jda = jb.build();
             listener.addJDAObject(jda);
-            System.out.println("---End JDA Object Build---");
+            listener.addMongoDBObject(mongoClient, database);
 
 
         } catch (LoginException e) {
