@@ -21,6 +21,8 @@ public class Test extends BasicFeature{
             case "createCollection":
                 textChannel.sendMessage("start creating collection...").queue();
                 break;
+            case "deleteCollection":
+                textChannel.sendMessage("start deleting collection...").queue();
             default:
                 textChannel.sendMessage("No Test Command ").queue();
                 break;

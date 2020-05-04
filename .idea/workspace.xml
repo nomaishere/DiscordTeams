@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a8cbb20-a571-4888-9805-668efe189826" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/command/Update.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/feature/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/lib/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/discordteams/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/discordteams/Bot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/discordteams/Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/discordteams/Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/token.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/token.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/discordteams/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/discordteams/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/Listener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/discordteams/command/BasicFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/feature/BasicFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/discordteams/command/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/feature/Schedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/discordteams/command/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/feature/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/discordteams/feature/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/discordteams/feature/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +113,7 @@
       <workItem from="1588241211829" duration="5767000" />
       <workItem from="1588250108320" duration="3330000" />
       <workItem from="1588291715185" duration="30673000" />
-      <workItem from="1588566001782" duration="2736000" />
+      <workItem from="1588566001782" duration="2958000" />
     </task>
     <task id="LOCAL-00001" summary="add: token reader">
       <created>1588250715580</created>
@@ -194,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588433562895</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="test: basic mongoDB connection&#10;add: test class for DBteting">
+      <created>1588576510837</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588576510837</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +214,8 @@
     <MESSAGE value="add: getUserData from discord guild" />
     <MESSAGE value="add: main Listener System" />
     <MESSAGE value="add: BasicFeature Abstract Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: BasicFeature Abstract Class" />
+    <MESSAGE value="test: basic mongoDB connection&#10;add: test class for DBteting" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: basic mongoDB connection&#10;add: test class for DBteting" />
   </component>
   <component name="WindowStateProjectService">
     <state x="166" y="115" width="968" height="669" key="#Project_Structure" timestamp="1588250817355">
@@ -247,11 +239,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="473" y="289" width="494" height="327" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588242250924" />
-    <state x="0" y="0" width="837" height="900" key="CommitChangelistDialog2" timestamp="1588576483982">
+    <state x="0" y="0" width="837" height="900" key="CommitChangelistDialog2" timestamp="1588576510522">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="0" width="838" height="900" key="CommitChangelistDialog2/0.0.1440.900/-265.-1057.1920.1057@0.0.1440.900" timestamp="1588251086498" />
-    <state x="0" y="0" width="837" height="900" key="CommitChangelistDialog2/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588576483982" />
+    <state x="0" y="0" width="837" height="900" key="CommitChangelistDialog2/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588576510522" />
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1588319200977" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1588248812869">
       <screen x="0" y="0" width="1440" height="900" />
@@ -281,11 +273,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588510575455" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1588576504230">
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1588576512874">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900/-265.-1057.1920.1057@0.0.1440.900" timestamp="1588251089202" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588576504230" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900/-265.-1080.1920.1080@0.0.1440.900" timestamp="1588576512874" />
     <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1588319213437" />
     <state x="380" y="266" key="com.intellij.ide.util.TipDialog" timestamp="1588566012104">
       <screen x="0" y="0" width="1440" height="900" />
