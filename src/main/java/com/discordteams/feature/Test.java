@@ -1,5 +1,6 @@
 package com.discordteams.feature;
 
+import com.discordteams.extralib.DatabaseSetup;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import net.dv8tion.jda.api.JDA;
@@ -20,6 +21,8 @@ public class Test extends BasicFeature{
         switch (args[1]) {
             case "createCollection":
                 textChannel.sendMessage("start creating collection...").queue();
+                DatabaseSetup setup = new DatabaseSetup(jda,guild, user, textChannel, message, mongoClient, mongoDatabase);
+                setup.createTeam();
                 break;
             case "deleteCollection":
                 textChannel.sendMessage("start deleting collection...").queue();

@@ -1,5 +1,6 @@
 package com.discordteams;
 
+import com.discordteams.command.Notice;
 import com.discordteams.feature.Team;
 import com.discordteams.feature.Test;
 import com.mongodb.client.MongoClient;
@@ -48,7 +49,8 @@ public class Listener extends ListenerAdapter {
                 case "team":
                     Team team = new Team(jda, guild, user, tc, msg, mongoClient, mongoDatabase);
                     break;
-                case "schedule":
+                case "notice":
+                    Notice notice = new Notice(jda, guild, user, tc, msg, mongoClient, mongoDatabase);
                     break;
                 case "task":
                     break;

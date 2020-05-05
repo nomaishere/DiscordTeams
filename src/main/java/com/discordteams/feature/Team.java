@@ -1,4 +1,5 @@
 package com.discordteams.feature;
+import com.discordteams.command.Notice;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import net.dv8tion.jda.api.JDA;
@@ -11,6 +12,7 @@ import net.dv8tion.jda.internal.utils.Checks;
 import java.util.List;
 
 
+// 곧 버려질 Class
 public class Team extends BasicFeature {
 
     public Team(JDA jda, Guild guild, User user, TextChannel textChannel, Message message, MongoClient mongoClient, MongoDatabase mongoDatabase) {
@@ -52,7 +54,8 @@ public class Team extends BasicFeature {
     public void commandSelector() {
         String[] args = message.getContentRaw().substring(1).split(" ");
         switch (args[1]) {
-            case "update":
+            case "notice":
+                Notice notice = new Notice(jda,guild, user, textChannel, message, mongoClient, mongoDatabase);
                 break;
             case "member":
                 textChannel.sendMessage("member").queue();
