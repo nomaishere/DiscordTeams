@@ -19,8 +19,9 @@ public abstract class BasicCommandAbstractClass {
     MongoDatabase mongoDatabase;
     MongoCollection collection;
     String[] args;
+    String value;
 
-    public BasicCommandAbstractClass(JDA jda, Guild guild, User user, TextChannel textChannel, Message message, com.mongodb.client.MongoClient mongoClient, MongoDatabase mongoDatabase) {
+    public BasicCommandAbstractClass(JDA jda, Guild guild, User user, TextChannel textChannel, Message message, MongoClient mongoClient, MongoDatabase mongoDatabase) {
         this.jda = jda;
         this.guild = guild;
         this.user = user;
@@ -29,6 +30,8 @@ public abstract class BasicCommandAbstractClass {
         this.mongoClient = mongoClient;
         this.mongoDatabase = mongoDatabase;
         this.args = message.getContentRaw().substring(1).split(" ");
+        String[] valueSlicer = message.getContentRaw().substring(1).split("\"");
+        this.value = valueSlicer[1];
     }
 
     public abstract void typeSelector();

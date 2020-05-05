@@ -12,6 +12,7 @@ import org.bson.Document;
 import javax.print.Doc;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.text;
 
 public class Notice extends BasicCommandAbstractClass implements BasicCommand{
     public Notice(JDA jda, Guild guild, User user, TextChannel textChannel, Message message, MongoClient mongoClient, MongoDatabase mongoDatabase) {
@@ -46,12 +47,16 @@ public class Notice extends BasicCommandAbstractClass implements BasicCommand{
 
     @Override
     public void add() {
+        textChannel.sendMessage("add notice...").queue();
+
         Document doc = new Document("noticeId",message.getId())
                 .append("noticeTarget", args[2])
-                .append("noticeValue",args[3]);
+                .append("noticeValue",this.value)
+                .append("noticeCreateTime",message.getTimeCreated().toString());
 
-        collection.updateOne(eq("doctype", "noticeQueue"),
-                new Document("$push", new Document("datalist", new Document(message.getId(), doc))));
+
+        collection.updateOne(eq("doctype", "notice"),
+                new Document("$push", new Document("onNoticeQueue", doc)));
 
     }
 
