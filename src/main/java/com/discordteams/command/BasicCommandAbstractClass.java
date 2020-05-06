@@ -4,15 +4,15 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.entities.*;
+
+import java.util.List;
 
 public abstract class BasicCommandAbstractClass {
     JDA jda;
     Guild guild;
     User user;
+    List<Role> userRoles;
     TextChannel textChannel;
     Message message;
     MongoClient mongoClient;
@@ -21,17 +21,29 @@ public abstract class BasicCommandAbstractClass {
     String[] args;
     String value;
 
-    public BasicCommandAbstractClass(JDA jda, Guild guild, User user, TextChannel textChannel, Message message, MongoClient mongoClient, MongoDatabase mongoDatabase) {
+    public BasicCommandAbstractClass(JDA jda, Guild guild, User user, List<Role> userRoles, TextChannel textChannel, Message message, MongoClient mongoClient, MongoDatabase mongoDatabase) {
         this.jda = jda;
         this.guild = guild;
         this.user = user;
+        this.userRoles = userRoles;
         this.textChannel = textChannel;
         this.message = message;
         this.mongoClient = mongoClient;
         this.mongoDatabase = mongoDatabase;
         this.args = message.getContentRaw().substring(1).split(" ");
-        String[] valueSlicer = message.getContentRaw().substring(1).split("\"");
-        this.value = valueSlicer[1];
+        this.collection = mongoDatabase.getCollection(guild.getName());
+        commandValidation();
+    }
+
+    private void commandValidation() {
+        setValue();
+    }
+
+    private void setValue() {
+        if(args.length >= 4) {
+            String[] valueSlicer = message.getContentRaw().substring(1).split("\"");
+            this.value = valueSlicer[1];
+        }
     }
 
     public abstract void typeSelector();

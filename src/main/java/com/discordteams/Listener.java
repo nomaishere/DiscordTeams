@@ -6,16 +6,14 @@ import com.discordteams.feature.Test;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.api.events.guild.GuildLeaveEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 
 
 public class Listener extends ListenerAdapter {
@@ -37,6 +35,8 @@ public class Listener extends ListenerAdapter {
         Guild guild = event.getGuild();
         User user = event.getAuthor();
         TextChannel tc = event.getTextChannel();
+        Member member = event.getMember();
+        List<Role> userRoles = member.getRoles();
         Message msg = event.getMessage();
         if(user.isBot()) return;
         if(msg.getContentRaw().charAt(0) == '!') {
@@ -50,7 +50,7 @@ public class Listener extends ListenerAdapter {
                     Team team = new Team(jda, guild, user, tc, msg, mongoClient, mongoDatabase);
                     break;
                 case "notice":
-                    Notice notice = new Notice(jda, guild, user, tc, msg, mongoClient, mongoDatabase);
+                    Notice notice = new Notice(jda, guild, user, userRoles, tc, msg, mongoClient, mongoDatabase);
                     break;
                 case "task":
                     break;

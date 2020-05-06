@@ -54,9 +54,6 @@ public class Team extends BasicFeature {
     public void commandSelector() {
         String[] args = message.getContentRaw().substring(1).split(" ");
         switch (args[1]) {
-            case "notice":
-                Notice notice = new Notice(jda,guild, user, textChannel, message, mongoClient, mongoDatabase);
-                break;
             case "member":
                 textChannel.sendMessage("member").queue();
                 break;

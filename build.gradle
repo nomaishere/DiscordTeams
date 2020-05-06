@@ -20,6 +20,7 @@ dependencies {
     compile "net.dv8tion:JDA:$jdaVersion"
     compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.12.3'
 
+
 }
 
 compileJava.options.encoding = 'UTF-8'
