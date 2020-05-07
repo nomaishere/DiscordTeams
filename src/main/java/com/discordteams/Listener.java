@@ -1,6 +1,7 @@
 package com.discordteams;
 
 import com.discordteams.command.Notice;
+import com.discordteams.command.Task;
 import com.discordteams.feature.Team;
 import com.discordteams.feature.Test;
 import com.mongodb.client.MongoClient;
@@ -53,13 +54,15 @@ public class Listener extends ListenerAdapter {
                     Notice notice = new Notice(jda, guild, user, userRoles, tc, msg, mongoClient, mongoDatabase);
                     break;
                 case "task":
+                    Task task = new Task(jda, guild, user, userRoles, tc, msg, mongoClient, mongoDatabase);
                     break;
                 case "":
                     break;
                 case "test":
                     Test test = new Test(jda, guild, user, tc, msg, mongoClient, mongoDatabase);
                 default:
-                    tc.sendMessage("There are no command. Text !help to get a usable command :) ").queue();
+                    //tc.sendMessage("There are no command. Text !help to get a usable command :) ").queue();
+                    break;
             }
         }
     }

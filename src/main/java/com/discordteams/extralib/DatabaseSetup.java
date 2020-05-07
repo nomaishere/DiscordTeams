@@ -35,22 +35,12 @@ public class DatabaseSetup {
 
     // 새 팀의 Collection 을 만들고 Document 구성용 함수들을 불러오는 함수
     public void createTeam() {
-        //mongoDatabase.createCollection(guild.getName());
+        mongoDatabase.createCollection(guild.getName());
         collection = mongoDatabase.getCollection(guild.getName());
-        //createBasicDoc();
-        //createTeamDoc();
-        //createNoticeQueue();
-        testArray();
-    }
-
-    private void testArray() {
-        collection.insertMany(Arrays.asList(
-                Document.parse("{ item: 'journal', qty: 25, tags: ['blank', 'red'], dim_cm: [ 14, 21 ] }"),
-                Document.parse("{ item: 'notebook', qty: 50, tags: ['red', 'blank'], dim_cm: [ 14, 21 ] }"),
-                Document.parse("{ item: 'paper', qty: 100, tags: ['red', 'blank', 'plain'], dim_cm: [ 14, 21 ] }"),
-                Document.parse("{ item: 'planner', qty: 75, tags: ['blank', 'red'], dim_cm: [ 22.85, 30 ] }"),
-                Document.parse("{ item: 'postcard', qty: 45, tags: ['blue'], dim_cm: [ 10, 15.25 ] }")
-        ));
+        createBasicDoc();
+        createTeamDoc();
+        createNoticeDocument();
+        createTaskDocument();
     }
 
     private void createBasicDoc() {
@@ -67,10 +57,17 @@ public class DatabaseSetup {
         collection.insertOne(doc);
     }
 
-    private void createNoticeQueue() {
+    private void createNoticeDocument() {
         Document doc = new Document("doctype","notice")
                 .append("onNoticeQueue", Arrays.asList())
                 .append("doneNoticeQueue", Arrays.asList());
+        collection.insertOne(doc);
+    }
+
+    private void createTaskDocument() {
+        Document doc = new Document("doctype","task")
+                .append("onTaskQueue", Arrays.asList())
+                .append("doneTaskQueue", Arrays.asList());
         collection.insertOne(doc);
     }
 

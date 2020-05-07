@@ -48,4 +48,26 @@ public abstract class BasicCommandAbstractClass {
 
     public abstract void typeSelector();
 
+
+    protected void sendPrivateMessage(List<String> targetRolesId, MessageEmbed privateNoticeEmbed) {
+        if(targetRolesId.get(0).equals("everyone")) {
+            List<Member> members = guild.getMembers();
+            for(Member eachMember : members) {
+                User eachUser = eachMember.getUser();
+                if(eachUser.isBot())
+                    continue;
+                eachUser.openPrivateChannel().complete().sendMessage(privateNoticeEmbed).queue();
+            }
+        }
+        else {
+            List<Member> members = guild.getMembersWithRoles(message.getMentionedRoles());
+            for(Member eachMember : members) {
+                User eachUser = eachMember.getUser();
+                if(eachUser.isBot())
+                    continue;
+                eachUser.openPrivateChannel().complete().sendMessage(privateNoticeEmbed).queue();
+            }
+        }
+    }
+
 }
